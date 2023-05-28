@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 export default function Products() {
     const[data,setData]=useState([]);
@@ -47,7 +47,7 @@ export default function Products() {
                                 <div class="card-body">
                                     <h5 class="card-title mb-0">{product.title.substring(0,12)}...</h5>
                                     <p class="card-text fw-bold">${product.price}</p>
-                                    <Link to="#" class="btn btn-outline-dark">Buy Now</Link>
+                                    <Link to={`/product/${product.id}`}class="btn btn-outline-dark">Buy Now</Link>
                                 </div>
                                 </div>
                             </div>

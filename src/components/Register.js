@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 // import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -12,7 +12,7 @@ const initialStates = {
   confpassword: '',
 }
 export default function Register() {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialStates,
     validationSchema:
       Yup.object().shape({
@@ -25,9 +25,8 @@ export default function Register() {
     ,
     onSubmit: async (vals) => {
       alert(JSON.stringify(values, null, 2));
+      // const { fname, lname, email, password, confpassword } = vals; 
       console.log('vals :>> ', vals);
-      const { fname, lname, email, password, confpassword } = vals;
-
 
       // const res = await fetch("http://localhost:7200/register", {
       //   method: 'POST',
